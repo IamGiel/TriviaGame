@@ -1,0 +1,39 @@
+	
+.well {
+	width: 48%;
+	position: relative;
+	float: left;
+	display:block;
+	height: 100px;
+	margin-left:2px;
+}
+p {
+	position:relative;
+}
+.radio-inline {
+	align-content: center;
+}
+
+h1 {
+	text-align: center;
+	color:white;
+	background: url("../images/triviaBackground.jpeg");
+}
+
+#box1 {
+	background: url("../images/planets");
+	color:white;
+	background-repeat: no-repeat;
+    background-size: auto;
+}
+
+#box2 {
+	background: url("../images/bronze.jpg");
+	color:white;
+	background-repeat: no-repeat;
+    background-size:auto;
+   
+}
+
+
+

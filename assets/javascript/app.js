@@ -8,9 +8,9 @@
 						if (!$("#one option:selected").length) {
 							    	$("#one option[value=jupiter]").attr('selected', 'selected');
 							}
-		}, 30*1000);
+		}, 300*1000);
 
-var number = 60;
+var number = 180;
 
     var intervalId;
     

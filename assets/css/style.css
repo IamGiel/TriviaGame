@@ -25,15 +25,88 @@ h1 {
 	color:white;
 	background-repeat: no-repeat;
     background-size: auto;
+    background-position: 16% 48%;
 }
 
 #box2 {
 	background: url("../images/bronze.jpg");
 	color:white;
 	background-repeat: no-repeat;
-    background-size:auto;
-   
+    background-size:100%;
+    background-position: 30% 20%;
 }
+#box3 {
+	background: url("../images/football.jpeg");
+	color:white;
+	background-repeat: no-repeat;
+    background-size:100%;
+    background-position: 30% 20%;
+}
+#box4 {
+    background: url(../images/footBall.jpg);
+    color: white;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 30% 101%;
+}
+#box5 {
+	background: url("../images/bands.jpeg");
+	color:white;
+	background-repeat: no-repeat;
+    background-size:100%;
+    background-position: 30% 20%;
+}
+#box6 {
+	background: url("../images/bands.jpeg");
+	color:white;
+	background-repeat: no-repeat;
+    background-size:100%;
+    background-position: 30% 20%;
+}
+#box6 {
+	background: url("../images/hiphop.jpeg");
+	color:white;
+	background-repeat: no-repeat;
+    background-size:100%;
+    background-position: 30% 20%;
+}
+#box7 {
+	background: url("../images/auto.jpg");
+	color:white;
+	background-repeat: no-repeat;
+    background-size:100%;
+    background-position: 30% 20%;
+}
+#box8 {
+	background: url("../images/harrypotter.jpeg");
+	color:white;
+	background-repeat: no-repeat;
+    background-size:100%;
+    background-position: 30% 64%;
+}
+#box9{
+	background: url("../images/painting.jpg");
+	color:white;
+	background-repeat: no-repeat;
+    background-size:100%;
+    background-position: 30% 64%;
+}
+#box10{
+	background: url("../images/monalisa.jpeg");
+	color:white;
+	background-repeat: no-repeat;
+    background-size:100%;
+    background-position: 30% 64%;
+}
+
+
+
+
+
+
+
+
+
 
 
 

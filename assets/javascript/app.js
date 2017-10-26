@@ -1,26 +1,44 @@
 
+
+
+$(document).ready(function() {
+     
+
+
+
 var stopwatch = {
 
   time: 60,
   lap: 1,
 
-  
+  // reset: function() {
+  // 	stopwatch.time = "00:00";
+  // 	clearInterval(intervalId);
+
+
+  // },
   start: function() {
 
     // DONE: Use setInterval to start the count here and set the clock to running.
     
-        intervalId = setInterval(stopwatch.count, 1000);
-        clockRunning = true;
+    intervalId = setInterval(stopwatch.count, 1000);
+    clockRunning = true;
   },
   
   count: function() {
 
     // DONE: increment time by 1, remember we cant use "this" here.
     stopwatch.time--;
+    clockRunning=false
+    if (stopwatch.time === 0) {
+		clearInterval(intervalId);
+
+    }
 
     // DONE: Get the current time, pass that into the stopwatch.timeConverter function,
     //       and save the result in a variable.
     var converted = stopwatch.timeConverter(stopwatch.time);
+
     console.log(converted);
 
     // DONE: Use the variable we just created to show the converted time in the "display" div.
@@ -49,51 +67,16 @@ var stopwatch = {
 stopwatch.start();
 
 
-setTimeout(function(){ $("#body").replaceWith("<body><h1>" + 
-						"correct answers: " + score + "<br>" + 
-						"wrong answers: "  + wrong + "<br>" + 
-						"unanswered: " + unanswered + "</h1></body>"); 
-				
-						if (!$("#one option:selected").length) {
-							$("#one option[value=jupiter]").attr('selected', 'selected');
-						}
-}, 60*1000);
-
-// var number = 180;
-
-//     var intervalId;
-    
-//     function run() {
-//       intervalId = setInterval(decrement, 1000);
-//     }
-
-//     function decrement() {
-
-//       number--;
-
-//       $("#timer").html("<h2>" + "You Have: " + number + " seconds left to choose the right answer" + "</h2>");
-
-//       if (number === 0) {
-
-//         stop();
-
-//         console.log("timestop");
-//       }
-
-//    }
-
-//     function stop() {
-
-//       clearInterval(intervalId);
-//     }
-
-//     run();
-
+setTimeout(function(){ $("#body").html("<body><h1>" + 
+							"correct answers: " + score + "<br>" + 
+							"wrong answers: "  + wrong + "<br>" + 
+							"unanswered: " + unanswered + "</h1><br><br><button id='reset'>Play Again</button</h1></br></body>"); 
+						}, 60*1000);
 
 
 
 	var correct;
-	var wrong = 10;
+	var wrong = 0;
 	var score = 0;
 	var unanswered = 10;
 	var clicked = false;
@@ -115,79 +98,142 @@ setTimeout(function(){ $("#body").replaceWith("<body><h1>" +
 
 			$("input[name=" + theme[i] + "][value=" + answerTo[j] + "]").on("click", function() {
 				score++;
-				wrong--;
 				console.log("you scored! = " + score);
 				console.log("wrong  = " + wrong);
 				});		
 		}
 	}
-	//we dont want this to be part of the loop because it will affect the scores
+	//we dont want this to be part of the loop because it will affect the scores and unanswered
 	$("input[name=planets]").change(function(){
 			$("input[name=planets]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
+		$("input[name=planets]").on("click", function(){
+			if ($('input[name=planets]:checked').val() != "jupiter") {
+		            wrong++;
+		            console.log("wrong " + wrong);
+		         }
+		});
 	$("input[name=sciElements]").change(function(){
 			$("input[name=sciElements]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
+		$("input[name=sciElements]").on("click", function(){
+			if ($('input[name=sciElements]:checked').val() != "coppertin") {
+		            wrong++;
+		            console.log("wrong " + wrong);
+		         }
+		});
 	$("input[name=superBowl]").change(function(){
 			$("input[name=superBowl]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
+		$("input[name=superBowl]").on("click", function(){
+			if ($('input[name=superBowl]:checked').val() != "deionSanders") {
+		            wrong++;
+		            console.log("wrong " + wrong);
+		         }
+		});
 	$("input[name=team]").change(function(){
 			$("input[name=team]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
+		$("input[name=team]").on("click", function(){
+			if ($('input[name=team]:checked').val() != "patriots") {
+		            wrong++;
+		            console.log("wrong " + wrong);
+		         }
+		});
 	$("input[name=question5]").change(function(){
 			$("input[name=question5]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
+		$("input[name=question5]").on("click", function(){
+			if ($('input[name=question5]:checked').val() != "GlenDanzig") {
+		            wrong++;
+		            console.log("wrong " + wrong);
+		         }
+		});
 	$("input[name=question6]").change(function(){
 			$("input[name=question6]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
+		$("input[name=question6]").on("click", function(){
+			if ($('input[name=question6]:checked').val() != "rapGod") {
+		            wrong++;
+		            console.log("wrong " + wrong);
+		         }
+		});
 	$("input[name=question7]").change(function(){
 			$("input[name=question7]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
+		$("input[name=question7]").on("click", function(){
+			if ($('input[name=question7]:checked').val() != "Fuel") {
+		            wrong++;
+		            console.log("wrong " + wrong);
+		         }
+		});
 	$("input[name=question8]").change(function(){
 			$("input[name=question8]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
+		$("input[name=question8]").on("click", function(){
+			if ($('input[name=question8]:checked').val() != "Philosopher") {
+		            wrong++;
+		            console.log("wrong " + wrong);
+		         }
+		});
 	$("input[name=question9]").change(function(){
 			$("input[name=question9]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
+		$("input[name=question9]").on("click", function(){
+			if ($('input[name=question9]:checked').val() != "Luxembourg") {
+		            wrong++;
+		            console.log("wrong " + wrong);
+		         }
+		});
 	$("input[name=question10]").change(function(){
 			$("input[name=sciElements]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
+		$("input[name=question10]").on("click", function(){
+			if ($('input[name=question10]:checked').val() != "Leonardo") {
+		            wrong++;
+		            console.log("wrong " + wrong);
+		         }
+		});
 
+		//play again
+	$("#reset").on("click", function() {
+		location.reload('body2');
+	});
+	
 
 	//just in case the user finsished quickly - they can submit.
-	$(".btn").on("click", function (){
-		$("#body").replaceWith("<body><h1>" + 
+	$("#submit").on("click", function (){
+		$("#body").html("<body><h1>" + 
 			"correct answers: " + score + "<br>" + 
 			"wrong answers: "  + wrong + "<br>" + 
-			"unanswered: " + unanswered + "</h1></body>")
+			"unanswered: " + unanswered + "<br><br></body>");
+	
 	});
 
+	
 
 
-
-
-
-
+});
 
 
 

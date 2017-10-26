@@ -18,6 +18,8 @@ h1 {
 	text-align: center;
 	color:white;
 	background: url("../images/triviaBackground.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 #box1 {
@@ -26,77 +28,147 @@ h1 {
 	background-repeat: no-repeat;
     background-size: auto;
     background-position: 16% 48%;
+    -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
+    
+}
+#box1:hover, #box2:hover, #box3:hover, #box4:hover, #box5:hover, #box6:hover, #box7:hover, #box8:hover, #box9:hover, #box10:hover {
+	height:40%;
 }
 
 #box2 {
 	background: url("../images/bronze.jpg");
 	color:white;
 	background-repeat: no-repeat;
-    background-size:100%;
+    background-size:130%;
     background-position: 30% 20%;
+    -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
 }
 #box3 {
 	background: url("../images/football.jpeg");
 	color:white;
 	background-repeat: no-repeat;
-    background-size:100%;
+    background-size:130%;
     background-position: 30% 20%;
+	-webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
 }
 #box4 {
     background: url(../images/footBall.jpg);
     color: white;
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 30% 101%;
+    background-size: 130%;
+    background-position: 30% 17%;
+    -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
 }
 #box5 {
 	background: url("../images/bands.jpeg");
 	color:white;
 	background-repeat: no-repeat;
-    background-size:100%;
+    background-size:130%;
     background-position: 30% 20%;
+	-webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
 }
 #box6 {
 	background: url("../images/bands.jpeg");
 	color:white;
 	background-repeat: no-repeat;
-    background-size:100%;
+    background-size:130%;
     background-position: 30% 20%;
+	-webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
 }
 #box6 {
 	background: url("../images/hiphop.jpeg");
 	color:white;
 	background-repeat: no-repeat;
-    background-size:100%;
+    background-size:130%;
     background-position: 30% 20%;
+	-webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
 }
 #box7 {
 	background: url("../images/auto.jpg");
 	color:white;
 	background-repeat: no-repeat;
-    background-size:100%;
+    background-size:130%;
     background-position: 30% 20%;
+	-webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
 }
 #box8 {
 	background: url("../images/harrypotter.jpeg");
 	color:white;
 	background-repeat: no-repeat;
-    background-size:100%;
+    background-size:130%;
     background-position: 30% 64%;
+	-webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
 }
 #box9{
 	background: url("../images/painting.jpg");
 	color:white;
 	background-repeat: no-repeat;
-    background-size:100%;
+    background-size:130%;
     background-position: 30% 64%;
+	-webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
 }
 #box10{
 	background: url("../images/monalisa.jpeg");
 	color:white;
 	background-repeat: no-repeat;
-    background-size:100%;
+    background-size:130%;
     background-position: 30% 64%;
+	-webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+    -moz-transition: height 1s; /* For Mozilla 3.1 to 6.0 */
+    transition: height 1s;
+    -ms-transition: height 1s; /* For Microsoft 3.1 to 6.0 */
+    transition: height 1s;
 }
 
 

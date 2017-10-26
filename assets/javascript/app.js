@@ -1,43 +1,93 @@
 
+var stopwatch = {
 
-		setTimeout(function(){ $("#body").replaceWith("<body><h1>" + 
+  time: 60,
+  lap: 1,
+
+  
+  start: function() {
+
+    // DONE: Use setInterval to start the count here and set the clock to running.
+    
+        intervalId = setInterval(stopwatch.count, 1000);
+        clockRunning = true;
+  },
+  
+  count: function() {
+
+    // DONE: increment time by 1, remember we cant use "this" here.
+    stopwatch.time--;
+
+    // DONE: Get the current time, pass that into the stopwatch.timeConverter function,
+    //       and save the result in a variable.
+    var converted = stopwatch.timeConverter(stopwatch.time);
+    console.log(converted);
+
+    // DONE: Use the variable we just created to show the converted time in the "display" div.
+    $("#display").text(converted);
+  },
+  timeConverter: function(t) {
+
+    var minutes = Math.floor(t / 60);
+    var seconds = t - (minutes * 60);
+
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+
+    if (minutes === 0) {
+      minutes = "00";
+    }
+    else if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    return minutes + ":" + seconds;
+  }
+};
+
+stopwatch.start();
+
+
+setTimeout(function(){ $("#body").replaceWith("<body><h1>" + 
 						"correct answers: " + score + "<br>" + 
 						"wrong answers: "  + wrong + "<br>" + 
 						"unanswered: " + unanswered + "</h1></body>"); 
-						
+				
 						if (!$("#one option:selected").length) {
-							    	$("#one option[value=jupiter]").attr('selected', 'selected');
-							}
-		}, 300*1000);
+							$("#one option[value=jupiter]").attr('selected', 'selected');
+						}
+}, 60*1000);
 
-var number = 180;
+// var number = 180;
 
-    var intervalId;
+//     var intervalId;
     
-    function run() {
-      intervalId = setInterval(decrement, 1000);
-    }
+//     function run() {
+//       intervalId = setInterval(decrement, 1000);
+//     }
 
-    function decrement() {
+//     function decrement() {
 
-      number--;
+//       number--;
 
-      $("#timer").html("<h2>" + "You Have: " + number + " seconds left to choose the right answer" + "</h2>");
+//       $("#timer").html("<h2>" + "You Have: " + number + " seconds left to choose the right answer" + "</h2>");
 
-      if (number === 0) {
+//       if (number === 0) {
 
-        stop();
+//         stop();
 
-        console.log("timestop");
-      }
-    }
+//         console.log("timestop");
+//       }
 
-    function stop() {
+//    }
 
-      clearInterval(intervalId);
-    }
+//     function stop() {
 
-    run();
+//       clearInterval(intervalId);
+//     }
+
+//     run();
 
 
 
@@ -54,77 +104,77 @@ var number = 180;
 	for (var j = 0; j < answerTo.length; j++) {
 		answerTo[j];
 
-	for (var i = 0; i < theme.length; i++) {
-		theme[i];
-	
-		$("input[name=" + theme[i] + "]").change(function(){
-			$("input[name=" + theme[i] + "]").prop('disabled', true);
-	    		
-				console.log("this is clicked ");
-		});
+		for (var i = 0; i < theme.length; i++) {
+			theme[i];
+		
+			$("input[name=" + theme[i] + "]").change(function(){
+				$("input[name=" + theme[i] + "]").prop('disabled', true);
+		    	
+					console.log("this is clicked ");
+			});
 
-		$("input[name=" + theme[i] + "][value=" + answerTo[j] + "]").on("click", function() {
-			score++;
-			wrong--;
-			console.log("you scored! = " + score);
-			console.log("wrong  = " + wrong);
-			});		
+			$("input[name=" + theme[i] + "][value=" + answerTo[j] + "]").on("click", function() {
+				score++;
+				wrong--;
+				console.log("you scored! = " + score);
+				console.log("wrong  = " + wrong);
+				});		
+		}
 	}
-	}
-
+	//we dont want this to be part of the loop because it will affect the scores
 	$("input[name=planets]").change(function(){
-			$("input[name=planets]").prop('disabled', true);
+			$("input[name=planets]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
 	$("input[name=sciElements]").change(function(){
-			$("input[name=sciElements]").prop('disabled', true);
+			$("input[name=sciElements]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
 	$("input[name=superBowl]").change(function(){
-			$("input[name=superBowl]").prop('disabled', true);
+			$("input[name=superBowl]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
 	$("input[name=team]").change(function(){
-			$("input[name=team]").prop('disabled', true);
+			$("input[name=team]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
 	$("input[name=question5]").change(function(){
-			$("input[name=question5]").prop('disabled', true);
+			$("input[name=question5]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
 	$("input[name=question6]").change(function(){
-			$("input[name=question6]").prop('disabled', true);
+			$("input[name=question6]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
 	$("input[name=question7]").change(function(){
-			$("input[name=question7]").prop('disabled', true);
+			$("input[name=question7]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
 	$("input[name=question8]").change(function(){
-			$("input[name=question8]").prop('disabled', true);
+			$("input[name=question8]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
 	$("input[name=question9]").change(function(){
-			$("input[name=question9]").prop('disabled', true);
+			$("input[name=question9]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
 	$("input[name=question10]").change(function(){
-			$("input[name=sciElements]").prop('disabled', true);
+			$("input[name=sciElements]").prop('disabled', false);
 			unanswered--;
 			console.log("not answered: " + unanswered);
 	});
 
 
-	
+	//just in case the user finsished quickly - they can submit.
 	$(".btn").on("click", function (){
 		$("#body").replaceWith("<body><h1>" + 
 			"correct answers: " + score + "<br>" + 

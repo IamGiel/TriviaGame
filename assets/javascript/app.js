@@ -66,12 +66,33 @@ var stopwatch = {
 
 stopwatch.start();
 
+	$("#results").hide();
+	
+	setTimeout(function(){  
+			$("#correct").html(score);
+			$("#wrong").html(wrong);
+			$("#unanswered").html(unanswered);
+			$("#wholeContent").hide();
+			$("#headerDisplay").hide();
+			$("#results").show();
+			// $("#giphy").show();
+			// $("#giphy").html(data[1].images.fixed_height_still.url.html(response).hide());
+			dataType = "you+did+it";
+			var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ dataType + "&api_key=dc6zaTOxFJmzC";
 
-setTimeout(function(){ $("#body").html("<body><h1>" + 
-							"correct answers: " + score + "<br>" + 
-							"wrong answers: "  + wrong + "<br>" + 
-							"unanswered: " + unanswered + "</h1><br><br><button id='reset'>Play Again</button</h1></br></body>"); 
-						}, 60*1000);
+	    	$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+			//url stored
+
+			//add new element contianing gif
+			gifUrl = response.data[0].embed_url;//url
+			gif = $("<img>").attr("src", gifUrl);//var that has url and e
+			$("#giphy").prepend(gif);
+			console.log(gifUrl);
+
+			});
+		
+
+	 }, 60*1000);
 
 
 
@@ -103,7 +124,10 @@ setTimeout(function(){ $("#body").html("<body><h1>" +
 				});		
 		}
 	}
-	//we dont want this to be part of the loop because it will affect the scores and unanswered
+
+	
+
+	//we dont want this to be part of the loop because it will affect the #scores and #unanswered  - - - any advise here??? DRY - im repeating here.
 	$("input[name=planets]").change(function(){
 			$("input[name=planets]").prop('disabled', false);
 			unanswered--;
@@ -223,11 +247,26 @@ setTimeout(function(){ $("#body").html("<body><h1>" +
 
 	//just in case the user finsished quickly - they can submit.
 	$("#submit").on("click", function (){
-		$("#body").html("<body><h1>" + 
-			"correct answers: " + score + "<br>" + 
-			"wrong answers: "  + wrong + "<br>" + 
-			"unanswered: " + unanswered + "<br><br></body>");
-	
+		$("#correct").html(score);
+		$("#wrong").html(wrong);
+		$("#unanswered").html(unanswered);
+		$("#wholeContent").hide();
+		$("#headerDisplay").hide();
+		$("#results").show();
+		// $("#giphy").show();
+
+		dataType = "you+did+it";
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q="+ dataType + "&api_key=dc6zaTOxFJmzC";
+
+    	$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+		//url stored
+		gifUrl = response.data[0].embed_url;//url
+		gif = $("<img>").attr("src", gifUrl);//var that has url and e
+		$("#giphy").html(gif);
+		console.log(gifUrl);
+});
+		
+
 	});
 
 	
